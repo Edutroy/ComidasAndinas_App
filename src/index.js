@@ -1,6 +1,6 @@
 import Server from "./server.js";
 
-const port = 8000;
+const port = process.env.PORT || 3000;;
 
 const server = new Server();
 server.listen(port);

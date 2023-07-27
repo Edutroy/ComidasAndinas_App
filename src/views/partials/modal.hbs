@@ -1,0 +1,46 @@
+<div class="meal-result">
+        <h2 class="title">Your Search Results:</h2>
+        <div id="meal">
+          {{#if meals.length}}
+          {{#each meals}}
+          <div class="meal-item" data-id="{{this.id}}">
+            <h2>{{this.nombre}}</h2>
+            <div class="meal-img">
+              <img src="{{this.imagen}}" alt="{{this.nombre}}">
+            </div>
+            <div class="meal-name">
+              <h3>{{this.strMeal}}</h3>
+              <a href="/recetas/{{this.id}}" class="recipe-btn">Get Recipe</a>
+            </div>
+
+          </div>
+
+          {{/each}}
+          
+          {{/if}}
+
+        </div>
+      </div>
+
+      {{#if recipeDetails}}
+      <div class="meal-details showRecipe">
+        <!-- recipe close btn -->
+
+        <a id="recipe-close-btn" type="button" href="#" class="btn recipe-close-btn" onclick="goBack()"> 
+          <i class="fas fa-times"></i>
+          </a>
+        <!-- meal content -->
+        <div class="meal-details-content">
+          <h2 class="recipe-title">{{recipeDetails.title}}</h2>
+          <div class="recipe-instruct"></div>
+          <h3>Ingredients:</h3>
+          <ul>
+            {{#each recipeDetails.ingredients}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+          <h3>Preparation:</h3>
+          <p>{{recipeDetails.preparation}}</p>
+
+        </div>
+        {{/if}}

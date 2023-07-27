@@ -1,5 +1,5 @@
 import express from 'express';
-import RecetasController from '../controller/Rectas_Controller.js';
+import RecetasController from '../model/Rectas_Controller.js';
 
 class RecetaRouter {
   constructor({ recetaModel, url }) {
@@ -11,8 +11,11 @@ class RecetaRouter {
   }
 
   setupRoutes() {
-    this.router.get('/', this.recetasController.getRecetaById.bind(this.recetasController));
+    
    // this.router.get('/:id', this.recetasController.getRecetaById.bind(this.recetasController));
+    //this.router.post('/', this.recetasController.getRecetas.bind(this.recetasController));
+    this.router.post('/', this.recetasController.getRecetas.bind(this.recetasController));
+    this.router.get('/:id', this.recetasController.showRecipeDetails.bind(this.recetasController));
   }
 }
 
