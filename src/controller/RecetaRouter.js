@@ -1,5 +1,5 @@
 import express from 'express';
-import RecetasController from '../model/Rectas_Controller.js';
+import RecetasController from '../model/Rectas_model.js';
 
 class RecetaRouter {
   constructor({ recetaModel, url }) {

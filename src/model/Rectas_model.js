@@ -1,4 +1,4 @@
-import APIController from "./API_controller.js";
+import APIController from "./Api_model.js";
 
 class RecetasController {
   constructor(apiController) {
@@ -36,20 +36,6 @@ class RecetasController {
     }
   } 
 
-  /* async getRecetaById(req, res) {
-    const id = parseInt(req.params.id);
-    try {
-      const data = await this.apiController.fetchData(this.apiController.url);
-      const receta = data.comidas.find((receta) => receta.id === id);
-      if (receta) {
-        res.render("receta", { receta });
-      } else {
-        res.status(404).json({ message: "Receta no encontrada" });
-      }
-    } catch (error) {
-      res.status(500).json({ message: "Error al obtener la receta" });
-    }
-  } */
 
 
   async showRecipeDetails(req, res) {
